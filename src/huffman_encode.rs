@@ -61,7 +61,7 @@ fn tree_to_symbol_table(root: &ByteNode) -> SymbolMap {
     return symbol_map;
 }
 
-pub fn make_symbol_table(stats: &Stats) -> SymbolMap {
+fn build_tree(stats: &Stats) -> ByteNode {
     let mut heap = BinaryHeap::new();
     for (byte, count) in &stats.frequency_map {
         let node = ByteNode { symbol_or_children: Symbol(*byte), weight: *count };
@@ -79,6 +79,9 @@ pub fn make_symbol_table(stats: &Stats) -> SymbolMap {
         heap.push(node);
     }
     assert!(heap.len() == 1, "Only 1 element in heap");
+    heap.pop().expect("Only 1 element in heap")
+}
 
-    tree_to_symbol_table(&heap.pop().expect("Only 1 element in heap"))
+pub fn make_symbol_table(stats: &Stats) -> SymbolMap {
+    tree_to_symbol_table(&build_tree(stats))
 }
