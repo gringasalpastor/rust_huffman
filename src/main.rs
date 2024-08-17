@@ -1,6 +1,9 @@
 use clap::Parser;
 use std::path::PathBuf;
 
+mod huffman_encode;
+mod stats;
+
 fn parse_input_file(s: &str) -> Result<PathBuf, String> {
     let path = PathBuf::from(s);
     if !path.is_file() {
@@ -19,8 +22,11 @@ struct Cli {
 
 fn main() {
     let cli = Cli::parse();
+    let stats = stats::read_file(&cli.input_file);
+    let symbol_table = huffman_encode::make_symbol_table(&stats);
 
-    println!("input_file: {}", cli.input_file.display());
+    println!("{:#?}", symbol_table);
+    println!("entropy H(x): {:?} bits/symbol(byte)", stats.entropy());
 }
 
 #[test]
