@@ -1,8 +1,7 @@
 use crate::huffman_encode::SymbolOrChildren::Children;
 use crate::huffman_encode::SymbolOrChildren::Symbol;
 use crate::stats::Stats;
-use bit_vec::BitVec;
-use fnv_rs::FnvHashMap;
+// use fnv_rs::FnvHashMap;
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
 
@@ -18,7 +17,8 @@ struct HuffNode<T> {
 
 type NodeRef<T> = Box<HuffNode<T>>;
 type ByteNode = HuffNode<u8>;
-type SymbolMap = FnvHashMap<u8, BitVec>;
+// type SymbolMap = FnvHashMap<u8, BitVec>;
+type SymbolMap = Vec<u16>;
 
 impl<T> Ord for HuffNode<T> {
     fn cmp(&self, other: &Self) -> Ordering {
@@ -37,34 +37,45 @@ impl<T> PartialEq for HuffNode<T> {
 }
 impl<T> Eq for HuffNode<T> {}
 
-fn tree_to_symbol_table_impl(node: &ByteNode, symbol_map: &mut SymbolMap, bit_rep: BitVec) {
+fn tree_to_symbol_table_impl(node: &ByteNode, symbol_map: &mut SymbolMap, bit_rep: u16) {
     match &node.symbol_or_children {
         Children { left, right } => {
-            let mut left_rep = bit_rep.clone();
-            let mut right_rep = bit_rep; // no clone, move bit_rep
+            let mut left_rep = bit_rep;
+            let mut right_rep = bit_rep;
 
-            left_rep.push(false);
-            right_rep.push(true);
+            left_rep = left_rep << 1;
+            right_rep = (right_rep << 1) | 1;
+            // left_rep.push(false);
+            // right_rep.push(true);
+
+            // tree_bin_rep.push(PARENT_NODE);
 
             tree_to_symbol_table_impl(left, symbol_map, left_rep);
             tree_to_symbol_table_impl(right, symbol_map, right_rep);
         }
         Symbol(symbol) => {
-            symbol_map.insert(*symbol, bit_rep);
+            // tree_bin_rep.push(LEAF_NODE);
+            // tree_bin_rep.push(*symbol);
+            symbol_map[*symbol as usize] = bit_rep;
+            // symbol_map.insert(*symbol, bit_rep);
         }
     }
 }
 
 fn tree_to_symbol_table(root: &ByteNode) -> SymbolMap {
-    let mut symbol_map = SymbolMap::default();
-    tree_to_symbol_table_impl(root, &mut symbol_map, BitVec::new());
+    let mut symbol_map = vec![0u16; 256];
+    // let mut tree_bin_rep = BitVec::new();
+    tree_to_symbol_table_impl(root, &mut symbol_map, 0);
     return symbol_map;
 }
 
 fn build_tree(stats: &Stats) -> ByteNode {
     let mut heap = BinaryHeap::new();
-    for (byte, count) in &stats.frequency_map {
-        let node = ByteNode { symbol_or_children: Symbol(*byte), weight: *count };
+    for (byte, &count) in stats.frequency_map.iter().enumerate() {
+        if count == 0 {
+            continue;
+        }
+        let node = ByteNode { symbol_or_children: Symbol(byte as u8), weight: count };
         heap.push(node);
     }
 

@@ -1,0 +1,329 @@
+events: Hits
+
+fl=??
+fn=(1) 0x00007ff7bfea883f
+cfl=??
+cfn=(2) memchr::arch::x86_64::avx2::memchr::One::find_raw::h3427e3a7d941057d
+calls=1 0
+0 1
+
+fl=??
+fn=(3) 0x00007ff80a2c837a
+0 2
+
+fl=??
+fn=(4) unknown
+cfl=??
+cfn=(5) 0x00007ff80a334ff2
+calls=2 0
+0 2
+
+fl=??
+fn=(6) __mh_execute_header
+cfl=??
+cfn=(7) memchr::arch::x86_64::avx2::memchr::One::find_raw_avx2::h63d6a4ff59c8b912
+calls=4 0
+0 4
+
+fl=??
+fn=(8) memchr::arch::x86_64::memchr::memchr_raw::find_avx2::hc917d6493637bb81
+0 3
+
+fl=??
+fn=(9) _main
+cfl=??
+cfn=(10) std::rt::lang_start_internal::hb1473645dbe40065
+calls=24 0
+0 24
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(8)
+calls=1 0
+0 1
+
+fl=??
+fn=(11) rust_huffman::csv_read::process_file::ha0bc2809ec45577d
+cfl=??
+cfn=(12) _$LT$std..fs..File$u20$as$u20$std..io..Read$GT$::read_to_end::hf3a6276784146377
+calls=2 0
+0 2
+
+fl=??
+fn=(13) clap_builder::builder::command::Command::_do_parse::hc6dd680840f1f800
+cfl=??
+cfn=(14) 0x00007ff7bfea69cf
+calls=1 0
+0 1
+
+fl=??
+fn=(15) 0x00007f9d798e93cc
+cfl=??
+cfn=(8)
+calls=1 0
+0 1
+
+fl=??
+fn=(16) rust_huffman::csv_read::parse::hdb39caea8e9ec953
+0 4
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(2)
+calls=2 0
+0 2
+
+fl=??
+fn=(13)
+cfl=??
+cfn=(17) GCC_except_table4
+calls=1 0
+0 1
+
+fl=??
+fn=(18) _$LT$$RF$std..fs..File$u20$as$u20$std..io..Read$GT$::read_to_end::hed98b3e61241fee1
+cfl=??
+cfn=(6)
+calls=2 0
+0 2
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(4)
+calls=2 0
+0 2
+
+fl=??
+fn=(19) _$LT$$RF$std..io..stdio..Stdout$u20$as$u20$std..io..Write$GT$::write_fmt::h4ff1f38a187b705a
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(16)
+calls=1 0
+0 1
+
+fl=??
+fn=(10)
+cfl=??
+cfn=(20) std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hca77deb37586772c
+calls=24 0
+0 24
+
+fl=??
+fn=(21) std::sys::backtrace::__rust_begin_short_backtrace::hb5d7a34f151794aa
+cfl=??
+cfn=(22) rust_huffman::main::h435004b0ee21799f
+calls=24 0
+0 24
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(6)
+calls=2 0
+0 2
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(23) 0xffffffffffffffff
+calls=1 0
+0 1
+
+fl=??
+fn=(17)
+cfl=??
+cfn=(24) clap_builder::parser::parser::Parser::get_matches_with::h78fb7d803ea79410
+calls=1 0
+0 1
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(6)
+calls=1 0
+0 1
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(5)
+calls=2 0
+0 2
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(25) clap_builder::builder::command::Command::get_matches_from::h412075e08dd2234b
+calls=2 0
+0 2
+
+fl=??
+fn=(2)
+0 4
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(26) 0x0000000000284bd5
+calls=2 0
+0 2
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(3)
+calls=2 0
+0 2
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(27) 0x00007ff80a2c6ace
+calls=2 0
+0 2
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(1)
+calls=2 0
+0 2
+
+fl=??
+fn=(27)
+0 2
+
+fl=??
+fn=(25)
+cfl=??
+cfn=(13)
+calls=2 0
+0 2
+
+fl=??
+fn=(28) _$LT$clap_builder..util..any_value..AnyValueId$u20$as$u20$core..cmp..PartialEq$GT$::eq::hfecf7802a67e3b69
+0 1
+
+fl=??
+fn=(14)
+cfl=??
+cfn=(29) clap_builder::builder::command::Command::_build_self::h114e276afc774e29
+calls=1 0
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(19)
+calls=1 0
+0 1
+
+fl=??
+fn=(29)
+0 1
+
+fl=??
+fn=(7)
+0 5
+
+fl=??
+fn=(12)
+cfl=??
+cfn=(18)
+calls=2 0
+0 2
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(11)
+calls=19 0
+0 19
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(8)
+calls=1 0
+0 1
+
+fl=??
+fn=(23)
+cfl=??
+cfn=(28)
+calls=1 0
+0 1
+
+fl=??
+fn=(26)
+cfl=??
+cfn=(16)
+calls=2 0
+0 2
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(15)
+calls=1 0
+0 1
+
+fl=??
+fn=(20)
+cfl=??
+cfn=(21)
+calls=24 0
+0 24
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(6)
+calls=6 0
+0 6
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(7)
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(30) 0x000000000019fbf7
+calls=1 0
+0 1
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(2)
+calls=1 0
+0 1
+
+fl=??
+fn=(24)
+0 1
+
+fl=??
+fn=(30)
+cfl=??
+cfn=(16)
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(8)
+calls=8 0
+0 8
+

@@ -4,6 +4,19 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bit-vec = "0.8.0"
 clap = { version = "4.5.16", features = ["derive", "color"] }
+atoi_simd = "0.16.0"
 fnv_rs = "0.4.3"
+identity-hash = "0.1.0"
+memchr = "2.7.4"
+num-traits = "0.2.19"
+state-shift = "2.0.0"
+gperftools = "0.2.0"
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+
+[profile.debug2]
+inherits = "dev"
+debug = true
